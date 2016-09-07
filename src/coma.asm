@@ -151,7 +151,7 @@ find:
                      ; _host.
  xor cx, cx          ; Attribute mask. We
                      ; will ignore hidden
-					 ; and system files.
+                     ; and system files.
  mov ah, 4eh         ; Find first.
  int 21h
  jnc find_ok

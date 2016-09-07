@@ -127,7 +127,7 @@ find:
  mov dx, host ; Filespec.
  xor cx, cx   ; Attribute mask. COMA
               ; ignores hidden and system
-			  ; files.
+              ; files.
  mov ah, 4eh  ; Find first.
  int 21h
  jnc find_ok
@@ -409,7 +409,7 @@ remove_ren:
  int 21h
 
  mov word [tmpfh], 0 ; Mark the file
-					 ; handle as closed.
+                     ; handle as closed.
 
  ; Rename the temporary file.
  mov dx, tmpfn ; Existing filename at
