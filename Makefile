@@ -1,5 +1,5 @@
 AS=nasm
-ASFLAGS=-f bin
+ASFLAGS=-f bin -w+all -Werror
 
 # Build.
 all: coma.com clean.com
@@ -13,9 +13,11 @@ clean.com: src/clean.asm
 # Test.
 test: coma.com clean.com t/present.com t/toobig.com t/ok.com
 	cp coma.com clean.com ./t
-	SDL_VIDEODRIVER=dummy dosbox -conf dosbox/dosbox.conf -exit -c "cd t" "./t/test.bat"
-	./t/test.sh
-	@rm t/*.com t/*.COM t/*.TXT
+	@rc=0; \
+	SDL_VIDEODRIVER=dummy dosbox -conf dosbox/dosbox.conf -exit -c "cd t" "./t/test.bat" || rc=$$?; \
+	if [ $$rc -eq 0 ]; then ./t/test.sh || rc=$$?; fi; \
+	rm -f t/*.com t/*.COM t/*.TXT; \
+	exit $$rc
 
 t/present.com: t/present.asm
 	$(AS) $(ASFLAGS) -o $@ $<
