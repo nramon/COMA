@@ -1,4 +1,4 @@
-![COMA logo](https://github.com/nramon/COMA/raw/master/logo.png) [![Build Status](https://travis-ci.org/nramon/COMA.svg?branch=master)](https://travis-ci.org/nramon/COMA)
+![COMA logo](https://github.com/nramon/COMA/raw/master/logo.png) [![CI](https://github.com/nramon/COMA/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/nramon/COMA/actions/workflows/ci.yml)
 
 # COMA
 
