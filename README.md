@@ -1,6 +1,6 @@
-![COMA logo](https://github.com/nramon/COMA/raw/master/logo.png) [![CI](https://github.com/nramon/COMA/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/nramon/COMA/actions/workflows/ci.yml)
+<h1><img src="logo.png" alt="COMA logo" width="48" align="absmiddle"> COMA</h1>
 
-# COMA
+[![CI](https://github.com/nramon/COMA/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/nramon/COMA/actions/workflows/ci.yml)
 
 COMA is a self-reproducing program written for learning purposes. Although there is no malicious code in COMA, it does modify any [COM file](https://en.wikipedia.org/wiki/COM_file) it attaches to. However:
 
