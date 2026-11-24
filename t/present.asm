@@ -34,14 +34,13 @@ sign  equ 41121d ; COMA's signature.
 org 100h ; Leave room for the Program
          ; Segment Prefix.
 
-jmp near present_code ; We need a near
-                      ; jump so that the
-				      ; signature starts
-				      ; at the third
-				      ; byte. A short
-					  ; jump would make
-				      ; it land on the
-				      ; second byte.
+; We need a near jump so that the
+; signature starts at the third byte. A
+; short jump would make it land on the
+; second byte. NASM 3.x turns "jmp near"
+; into a short jump, so encode it by hand.
+db 0e9h                   ; Near jmp.
+dw present_code - ($ + 2) ; Displacement.
  
 ;----------------------------------------
 ; Data.
