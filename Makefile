@@ -1,5 +1,5 @@
 AS=nasm
-ASFLAGS=-f bin -w+all -Werror
+ASFLAGS=-f bin -w+all -w-reloc-abs-word -Werror
 
 # Build.
 all: coma.com clean.com
